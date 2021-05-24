@@ -1,4 +1,4 @@
-# Reverse Linux VNC for GitHub Actions
+# Reverse Linux VNC for GitHub Actions a.
 Enable VNC access on GitHub Actions VMs for general use.
 
 ![xd](screenshot.png)
