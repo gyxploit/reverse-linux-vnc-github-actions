@@ -18,7 +18,7 @@ sudo dpkg -i turbovnc_2.2.5_amd64.deb
 #wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
 #unzip ngrok-stable-linux-amd64.zip
 #chmod +x ngrok
-npm install -g localtunnel
+sudo npm install -g localtunnel
 
 # Fourth, generate and copy passwd file and xstartup script
 export PATH=$PATH:/opt/TurboVNC/bin
