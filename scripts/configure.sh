@@ -5,7 +5,7 @@
 
 # First, install required packages...
 sudo apt update
-sudo apt install -y xfce4 xfce4-goodies xfonts-base xubuntu-icon-theme xubuntu-wallpapers gnome-icon-theme x11-apps x11-common x11-session-utils x11-utils x11-xserver-utils x11-xkb-utils dbus-user-session dbus-x11 gnome-system-monitor gnome-control-center libpam0g libxt6 libxext6
+sudo apt install -y xfce4 xfce4-goodies xfonts-base xubuntu-icon-theme xubuntu-wallpapers gnome-icon-theme x11-apps x11-common x11-session-utils x11-utils x11-xserver-utils x11-xkb-utils dbus-user-session dbus-x11 gnome-system-monitor gnome-control-center libpam0g libxt6 libxext6 nodejs npm
 
 # Second, install TurboVNC
 # Fun Fact: TurboVNC is the only VNC implementations that supports OpenGL acceleration without an graphics device by default
@@ -15,9 +15,10 @@ wget https://phoenixnap.dl.sourceforge.net/project/turbovnc/2.2.5/turbovnc_2.2.5
 sudo dpkg -i turbovnc_2.2.5_amd64.deb
 
 # Third, download ngrok
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-unzip ngrok-stable-linux-amd64.zip
-chmod +x ngrok
+#wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+#unzip ngrok-stable-linux-amd64.zip
+#chmod +x ngrok
+npm install -g localtunnel
 
 # Fourth, generate and copy passwd file and xstartup script
 export PATH=$PATH:/opt/TurboVNC/bin
@@ -27,5 +28,7 @@ echo $VNC_PASSWORD | vncpasswd -f > $HOME/.vnc/passwd
 chmod 0600 $HOME/.vnc/passwd
 
 # Fifth and last, set up auth token from argument
-./ngrok authtoken $NGROK_AUTH_TOKEN
+#./ngrok authtoken $NGROK_AUTH_TOKEN
+
+
 exit
